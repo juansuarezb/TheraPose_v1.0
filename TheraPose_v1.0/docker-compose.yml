@@ -33,7 +33,7 @@ services:
       - KC_HOSTNAME=therapose.panes.top
       - KC_HTTP_ENABLED=true
       - KC_HEALTH_ENABLED=true
-      - KEYCLOAK_SERVER_URL=https://therapose.panes.top
+      - KC_PROXY=edge
     ports:
       - "8087:8080"
     depends_on:
