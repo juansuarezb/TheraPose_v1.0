@@ -31,9 +31,9 @@ services:
       - KC_DB_USERNAME=keycloak
       - KC_DB_PASSWORD=keycloak
       - KC_HOSTNAME=therapose.panes.top
+      - KC_PROXY=edge
       - KC_HTTP_ENABLED=true
       - KC_HEALTH_ENABLED=true
-      - KC_PROXY=edge
     ports:
       - "8087:8080"
     depends_on:
