@@ -32,9 +32,10 @@ services:
       - KC_DB_PASSWORD=keycloak
       - KC_HOSTNAME=therapose.panes.top
       - KC_HOSTNAME_STRICT=false
-      - KC_HOSTNAME_STRICT_BACKCHANNEL=false
+      # - KC_HOSTNAME_STRICT_BACKCHANNEL=false
       - KC_HTTP_ENABLED=true
       - KC_HEALTH_ENABLED=true
+      - KEYCLOAK_SERVER_URL=http://therapose.panes.top
     ports:
       - "8087:8080"
     depends_on:
