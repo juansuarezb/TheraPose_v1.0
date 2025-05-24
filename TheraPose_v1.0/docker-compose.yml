@@ -2,12 +2,13 @@ services:
   postgres:
     image: postgres:15
     container_name: keycloak_postgres
+    restart: unless-stopped 
     environment:
       POSTGRES_DB: keycloak
       POSTGRES_USER: keycloak
       POSTGRES_PASSWORD: keycloak
     ports:
-      - "5432:5432"
+      - "5444:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
     healthcheck:
@@ -17,9 +18,10 @@ services:
       retries: 5
 
   keycloak:
-    build: .
+    # build: .
     image: bryanhert/keycloak-yoga:26.1.3
     container_name: keycloak
+    restart: unless-stopped 
     command: start-dev --import-realm
     environment:
       - KC_BOOTSTRAP_ADMIN_USERNAME=admin
